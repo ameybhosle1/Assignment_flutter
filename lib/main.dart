@@ -20,8 +20,6 @@ class _HomePageState extends State<HomePage> {
   var _connectionStatus = 'Unknown';
   Connectivity connectivity;
   StreamSubscription<ConnectivityResult> subscription;
-  String _now;
-  Timer _everySecond;
   @override
   void initState() {
     // TODO: implement initState
@@ -37,14 +35,6 @@ class _HomePageState extends State<HomePage> {
         getData();
       }
       setState(() {});
-    });
-    _now = DateTime.now().second.toString();
-
-    // defines a timer
-    _everySecond = Timer.periodic(Duration(seconds: 1), (Timer t) {
-      setState(() {
-        _now = DateTime.now().second.toString();
-      });
     });
   }
 
