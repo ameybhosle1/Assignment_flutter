@@ -32,7 +32,6 @@ class _HomePageState extends State<HomePage> {
       if (result == ConnectivityResult.wifi ||
           result == ConnectivityResult.mobile) {
         // getData();
-        // getData();
         setState(() {});
       }
     });
