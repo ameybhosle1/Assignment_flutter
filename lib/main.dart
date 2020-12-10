@@ -32,9 +32,9 @@ class _HomePageState extends State<HomePage> {
       if (result == ConnectivityResult.wifi ||
           result == ConnectivityResult.mobile) {
         // getData();
-        getData();
+        // getData();
+        setState(() {});
       }
-      setState(() {});
     });
   }
 
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
 // ignore: must_be_immutable
 class Second extends StatelessWidget {
   final String text;
-  String name, album, lyrics, artist;
+  var name, album, lyrics, artist;
   var rating;
   Second({Key key, @required this.text}) : super(key: key);
 
@@ -135,10 +135,12 @@ class Second extends StatelessWidget {
         ),
         body: Column(
           children: [
+            Text('Name'),
             Text('$name'),
             SizedBox(
               height: 20.0,
             ),
+            Text('Rating'),
             Text('$rating'),
             SizedBox(
               height: 20.0,
